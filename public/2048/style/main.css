@@ -1,5 +1,4 @@
 @import url(fonts/clear-sans.css);
-
 .game-board .heading:after {
   content: "";
   display: block;
