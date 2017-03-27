@@ -51,5 +51,6 @@
   "engines": {
     "node": "6.1.0"
   },
+  "main": "app.js",
   "license": "MIT"
 }
