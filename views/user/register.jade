@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  .page-header
+    h3 Kayıt Ol
+  form.form-horizontal(id='signup-form', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label(for='email') E-Posta
+      .col-sm-7
+        input.form-control(type='email', name='email', id='email', placeholder='Eposta', autofocus, required)
+    .form-group
+      label.col-sm-3.control-label(for='password') Şifre
+      .col-sm-7
+        input.form-control(type='password', name='password', id='password', placeholder='Şifre', required)
+    .form-group
+      label.col-sm-3.control-label(for='confirmPassword') Şifre Tekrarı
+      .col-sm-7
+        input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Şifre Tekrarı', required)
+    .form-group
+      .col-sm-offset-3.col-sm-7
+        button.btn.btn-success(type='submit')
+          i.fa.fa-user-plus
+          | Kayıt Ol

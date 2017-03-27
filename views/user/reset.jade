@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  .col-sm-8.col-sm-offset-2
+    form(method='POST')
+      legend Şifreyi Sıfırla
+      input(type='hidden', name='_csrf', value=_csrf)
+      .form-group
+        label(for='password') Yeni Şifre
+        input.form-control(type='password', name='password', id='password', placeholder='Yeni Şifre', autofocus, required)
+      .form-group
+        label(for='confirm') Yeni Şifre Tekrarı
+        input.form-control(type='password', name='confirm', id='confirm', placeholder='Yeni Şifre Tekrarı', required)
+      .form-group
+        button.btn.btn-primary.btn-reset(type='submit')
+          i.fa.fa-keyboard-o
+          | Şifremi Değiştir

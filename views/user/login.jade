@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+  .page-header
+    h3 Giriş Yap
+  form.form-horizontal(method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label(for='email') E-Posta
+      .col-sm-7
+        input.form-control(type='email', name='email', id='email', placeholder='Eposta', autofocus, required)
+    .form-group
+      label.col-sm-3.control-label(for='password') Şifre
+      .col-sm-7
+        input.form-control(type='password', name='password', id='password', placeholder='Şifre', required)
+    .form-group
+      .col-sm-offset-3.col-sm-7
+        button.col-sm-3.btn.btn-primary(type='submit')
+          i.fa.fa-user
+          | Giriş
+        a.btn.btn-link(href='/forgot') Şifremi Unuttum?
+    .form-group
+      .col-sm-offset-3.col-sm-7
+        hr
+    .form-group
+      .col-sm-offset-3.col-sm-7
+        a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+          i.fa.fa-facebook
+          | Facebook ile giriş yap
+        a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')
+          i.fa.fa-twitter
+          | Twitter ile giriş yap
+        a.btn.btn-block.btn-google.btn-social(href='/auth/google')
+          i.fa.fa-google-plus
+          | Google ile giriş yap
+        a.btn.btn-block.btn-github.btn-social(href='/auth/github')
+          i.fa.fa-github
+          | GitHub ile giriş yap
+        a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
+          i.fa.fa-instagram
+          | Instagram ile giriş yap

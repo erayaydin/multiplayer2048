@@ -1,0 +1,36 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        span.sr-only Menüyü Aç
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/')
+        i.fa.fa-cube
+        | Multiplayer 2048
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(class=(title == 'Anasayfa') ? 'active' : undefined)
+          a(href='/') Anasayfa
+      ul.nav.navbar-nav.navbar-right
+        if !user
+          li(class=(title == 'Giriş Yap') ? 'active' : undefined)
+            a(href='/login') Giriş Yap
+          li(class=(title == 'Hesap Oluştur') ? 'active' : undefined)
+            a(href='/register') Hesap Oluştur
+        else
+          li.dropdown(class=(title == 'Hesap Yönetimi') ? 'active' : undefined)
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              if user.profile.picture
+                img(src='#{user.profile.picture}')
+              else
+                img(src='#{user.gravatar(60)}')
+              | #{user.profile.name || user.email || user.id}&nbsp;
+              i.caret
+            ul.dropdown-menu
+              li
+                a(href='/account') Hesabım
+              li.divider
+              li
+                a(href='/logout') Çıkış Yap
