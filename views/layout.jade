@@ -9,6 +9,7 @@ html
     title #{title} - Multiplayer 2048
     link(rel='shortcut icon', href='/favicon.png')
     link(rel='stylesheet', href='/css/main.css')
+    link(rel='stylesheet', href='/2048/style/main.css')
 
   body
     // Header
@@ -28,6 +29,21 @@ html
     script(src='/js/lib/bootstrap.min.js')
     // Network bağlantımızı oluşturacak olan socket.io kütüphanesi
     script(src='/socket.io/socket.io.js')
+    // 2048 Oyun Kodları
+    script(src="2048/js/bind_polyfill.js")
+    script(src="2048/js/classlist_polyfill.js")
+    script(src="2048/js/animframe_polyfill.js")
+    script(src="2048/js/keyboard_input_manager.js")
+    script(src="2048/js/html_actuator.js")
+    script(src="2048/js/grid.js")
+    script(src="2048/js/tile.js")
+    script(src="2048/js/local_storage_manager.js")
+    script(src="2048/js/game_manager.js")
+    script.
+        // Wait till the browser is ready to render the game (avoids glitches)
+        window.requestAnimationFrame(function () {
+            new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
+        });
     // Ana kodlarımızın bulunduğu main.js dosyası
     script(src='/js/main.js')
 

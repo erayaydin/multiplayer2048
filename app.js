@@ -30,6 +30,7 @@ dotenv.load({ path: '.env' });
  */
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
+const gameController = require('./controllers/game');
 
 /**
  * API keys and Password Configuration
@@ -118,6 +119,8 @@ app.post('/account/profile', isAuthenticated, userController.updateProfile);
 app.post('/account/password', isAuthenticated, userController.updatePassword);
 app.post('/account/delete', isAuthenticated, userController.deleteAccount);
 app.get('/account/unlink/:provider', isAuthenticated, userController.oauthUnlink);
+
+app.get('/game', gameController.index);
 
 /**
  * OAuth Authentication Routes

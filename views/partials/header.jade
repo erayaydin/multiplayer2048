@@ -13,6 +13,8 @@
       ul.nav.navbar-nav
         li(class=(title == 'Anasayfa') ? 'active' : undefined)
           a(href='/') Anasayfa
+        li(class=(title == 'Oyun') ? 'active' : undefined)
+          a(href='/game') Oyun
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=(title == 'Giriş Yap') ? 'active' : undefined)
